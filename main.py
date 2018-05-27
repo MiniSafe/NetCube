@@ -3,8 +3,6 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 import os
-
-print("[!!!] 欢迎使用Fw流量分析系统")
 print("[***] 正在导入依赖库")
 from scapy.all import *
 

@@ -17,8 +17,7 @@ def tcp(packet, request_info, data):
                           "请求网站:GET http://%s:%s/%s" % (
                               r_header.get("Host"), request_info['dport'], decoder(r_line.split(b" ")[1].lstrip(b"/"))))
             except Exception, e:
-                print(e)
-                print(datas)
+                pass
         if datas.startswith(b"POST "):
             try:
                 r_line, tmp = datas.split(b"\r\n", 1)
@@ -31,8 +30,6 @@ def tcp(packet, request_info, data):
                               decoder(r_header.get("Host")), request_info['dport'], decoder(r_line.split(b" ")[1].lstrip(b"/")),
                               decoder(repr(tmp.split(b"\r\n\r\n")[1]))))
             except Exception,e:
-                print("HTTPERR",e)
-                print(datas)
                 pass
 
 
